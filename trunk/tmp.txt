@@ -1,0 +1,13 @@
+ Volume in drive B is Data
+ Volume Serial Number is 1E0C-10D7
+
+ Directory of B:\Documents\Semester III\Alstruk [IF2030]\Tubes2\files
+
+17/11/2010  03:09                 3 ada.xcl
+17/11/2010  17:45                 3 apa.xcl
+17/11/2010  03:05                 3 apuk.xcl
+17/11/2010  02:50                 3 bisa.xcl
+17/11/2010  03:10                 3 horee.xcl
+17/11/2010  03:09                 3 oke.xcl
+               6 File(s)             18 bytes
+               0 Dir(s)  35.758.641.152 bytes free
