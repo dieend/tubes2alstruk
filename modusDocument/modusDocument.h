@@ -1,13 +1,22 @@
 #ifndef modusDocument_H
 #define modusDocument_H
-#include "../global/variable.h"
 
+#include "find/find.h"
+#include "list/list.h"
+#include "exit/exit.h"
+#include "new/new.h"
 void transferDirectory();
+/* Memparsing dari system("dir") menjadi variable Dir */
+
 void initDir();
-void List();
+/* Menginisiasi Dir dengan kosong, atau sesuai file input program */
+
 void Find(command Command);
-void Delete(command Command);
-void New(command Command);
+/* Melaksanakan command Find */
+
 void Open(command Command);
-void Exit();
+/* Melaksanakan command Open */
+
+void New(command Command);
+
 #endif
