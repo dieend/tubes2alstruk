@@ -6,5 +6,8 @@ gcc -o "tes" main.c global/variable.c ^
  modusDocument/exit/exit.c ^
  modusDocument/find/find.c ^
  modusDocument/list/list.c ^
- modusDocument/new/new.c
+ modusDocument/new/new.c ^
+ modusFile/modusFile.c ^
+ modusFile/strukturData/worksheet.c ^
+ -Wall
 pause

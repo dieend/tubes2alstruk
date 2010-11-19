@@ -2,6 +2,7 @@
 #define command_H
 
 #include "../modusDocument/modusDocument.h"
+#include "../modusFile/modusFile.h"
 
 
 void clean(command * Command);
@@ -12,5 +13,7 @@ command readCommand();
 
 int processCommandDocument(command Command);
 /* Memproses Command */
+
+int processCommandFile(command Command);
 
 #endif

@@ -40,3 +40,7 @@ int processCommandDocument(command Command){
 	else printf("Command error\n");
 	return 1;
 }
+
+int processCommandFile(command Command) {
+	return 0;
+}
