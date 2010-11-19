@@ -5,6 +5,9 @@
 #include "list/list.h"
 #include "exit/exit.h"
 #include "new/new.h"
+#include "delete/delete.h"
+#include "../modusFile/modusFile.h"
+
 void transferDirectory();
 /* Memparsing dari system("dir") menjadi variable Dir */
 

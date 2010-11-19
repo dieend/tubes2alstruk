@@ -3,12 +3,15 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "boolean.h"
-
+#define DEBUG printf("OK")
 
 #define ekstensi ".xcl"
 
 #define MAXSIZE 50
+#define Nil NULL
+
 typedef struct {
 	char param[5][MAXSIZE];
 } command;
@@ -22,6 +25,8 @@ typedef struct {
 	int all;
 } directory;
 
+
 extern FILE * FXINT;
 extern directory Dir;
+
 #endif

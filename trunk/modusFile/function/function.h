@@ -2,12 +2,14 @@
 #define function_h
 
 /**
-	b1 = baris 1;
-	k1 = kolom 1;
-	b2 = baris 2;
-	k2 = kolom 2;
+	r1 = row 1;
+	c1 = column 1;
+	r2 = row 2;
+	c2 = column 2;
  */
 
-//int sum (int b1, int k1, 
+int sum (int r1, int c1, int r2, int c2);
+
+//fungsi yang lain sama parameternya. r1,c1,r2,c2. tambahin sendiri ya.
 
 #endif
