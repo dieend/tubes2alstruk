@@ -1,7 +1,7 @@
 @echo off
 gcc -o "tes" main.c global/variable.c ^
  commandProcessing/commandProcessing.c ^
- modusDocument/modusDocument.c ^
+ modusDocument/winmodusDocument.c ^
  modusDocument/delete/delete.c ^
  modusDocument/exit/exit.c ^
  modusDocument/find/find.c ^

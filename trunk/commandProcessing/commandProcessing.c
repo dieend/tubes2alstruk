@@ -42,5 +42,12 @@ int processCommandDocument(command Command){
 }
 
 int processCommandFile(command Command) {
+	if (!strcmp(Command.param[0],"save")) Save(); else
+	if (!strcmp(Command.param[0],"display")) Display(Command); else
+	if (!strcmp(Command.param[0],"close")) return 0; else
+	if (!strcmp(Command.param[0],"write")) Write(Command); else
+	if (!strcmp(Command.param[0],"remove")) Remove(Command); else
+	if (Command.param[0][1] == '=') Evaluate(Command); else
+	printf("Invalid Command!\n");	
 	return 0;
 }

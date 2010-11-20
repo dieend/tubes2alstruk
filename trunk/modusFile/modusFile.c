@@ -12,3 +12,16 @@ void doModusFile(FILE * processedFile){
 		printf(">>");
 	} while (processCommandFile(readCommand()));
 }
+
+void Save(){
+}
+
+void Display(command Command){
+}
+
+void Write(command Command){
+}
+void Remove(command Command){
+}
+void Evaluate(command Command){
+}
