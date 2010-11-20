@@ -48,7 +48,6 @@ void alokasiWorksheet(){
 	
 	Worksheet.hKolom = alokasiHeader(1);
 	Header = Worksheet.hKolom;
-	DEBUG;
 	for (i=0; i<MAXWORKSIZE+1; i++) {
 //		printf("%d\n",i);
 		Header->next = alokasiHeader(i+2);
