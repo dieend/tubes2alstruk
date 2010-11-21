@@ -6,7 +6,7 @@
 
 
 enum tipe {
-	EMPTY, REAL, STRING, FORMULA, INTEGER, BOOLEAN, FAIL
+	EMPTY, REAL, KALIMAT, FORMULA, INTEGER, BOOLEAN, FAIL
 };
 
 
@@ -17,7 +17,7 @@ typedef struct tcell{
 		char KALIMAT[100];
 		char FORMULA[100];
 		int INTEGER;
-		boolean dBOOLEAN;
+		boolean BOOLEAN;
 	};
 	enum tipe tipeData;
 	addressCell NextRow;
@@ -31,6 +31,7 @@ typedef struct tcell{
 #define Formula(c) (c)->FORMULA
 #define Integer(c) (c)->INTEGER
 #define Kalimat(c) (c)->KALIMAT
+#define Boolean(c) (c)->BOOLEAN
 #define NextR(c) (c)->NextRow
 #define NextC(c) (c)->NextCol
 
@@ -51,6 +52,9 @@ addressCell alokasiCell() ;
 void alokasiWorksheet();
 addressCell getCell(int r, int c);
 void showAll(int r, int c);
+void inverse(char inver_a[],int j);
+char * indeksKolom(int n);
+int nomorKolom(char kolom[]);
 extern worksheet Worksheet;
 
 #endif
