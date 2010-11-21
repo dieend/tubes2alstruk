@@ -37,12 +37,10 @@ void Find(command Command){
 
 void Open(command Command){
 	char path[50];
-	FILE * processedFile;
 	strcpy(path,"files/");
 	strcat(path,Command.param[1]);
 	strcat(path,ekstensi);
-	processedFile = fopen(path,"r");
-	doModusFile(processedFile);
+	doModusFile(path);	
 }
 
 void New(command Command) {

@@ -90,3 +90,49 @@ void showAll(int r, int c) {
 		printf("\n");
 	}
 }
+
+void inverse(char inver_a[],int j)
+{
+   int i,temp;
+   j--;
+   for(i=0;i<(j/2);i++)
+   {
+      temp=inver_a[i];
+      inver_a[i]=inver_a[j];
+      inver_a[j]=temp;
+      j--;
+   }
+}
+
+char * indeksKolom(int n) {
+	char* indeks;
+	n--;
+	indeks = (char*) malloc(20*sizeof(char));
+	int chr,len = 0;
+	char tmp[2];
+	strcpy(indeks,"");
+	strcpy(tmp,"A");
+	while (n>0) {
+		chr = n%26;
+		tmp[0]=(char)(chr+'A');
+		strcat(indeks,tmp);
+		len++;
+		n/=26;
+	}
+	inverse(indeks, len);
+	return indeks;
+}
+
+int nomorKolom(char kolom[]) {
+	int n,len,mult;
+	mult = 1;
+	n=0;
+	len = strlen(kolom)-1;
+	while (len>=0) {
+		n += (int) (kolom[len]-'A') * mult;
+		mult*=25;
+		len--;
+	}
+	n+=1;
+	return n;
+}

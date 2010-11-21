@@ -8,5 +8,6 @@ gcc -o "tes" main.c global/variable.c \
  modusDocument/new/new.c \
  modusFile/modusFile.c \
  modusFile/strukturData/worksheet.c \
+ modusFile/save/save.c \
  -Wall
  
