@@ -93,9 +93,10 @@ void showAll(int r, int c) {
 
 void inverse(char inver_a[],int j)
 {
-   int i,temp;
+   int i,temp,x;
+   x = j;
    j--;
-   for(i=0;i<(j/2);i++)
+   for(i=0;i<(x/2);i++)
    {
       temp=inver_a[i];
       inver_a[i]=inver_a[j];
@@ -112,9 +113,15 @@ char * indeksKolom(int n) {
 	char tmp[2];
 	strcpy(indeks,"");
 	strcpy(tmp,"A");
+	chr = n%26;
+	tmp[0]=(char)(chr+('A'));
+	strcat(indeks,tmp);
+	len++;
+	n/=26;
 	while (n>0) {
+		n--;
 		chr = n%26;
-		tmp[0]=(char)(chr+'A');
+		tmp[0]=(char)(chr+('A'));
 		strcat(indeks,tmp);
 		len++;
 		n/=26;
@@ -128,11 +135,13 @@ int nomorKolom(char kolom[]) {
 	mult = 1;
 	n=0;
 	len = strlen(kolom)-1;
+//	printf("%s\n",kolom);
 	while (len>=0) {
-		n += (int) (kolom[len]-'A') * mult;
-		mult*=25;
+		n += (int) (kolom[len]-'A'+1) * mult;
+//		printf("%d\n",n);
+//		printf("%d",len);
+		mult*=26;
 		len--;
 	}
-	n+=1;
 	return n;
 }

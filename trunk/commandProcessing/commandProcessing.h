@@ -9,11 +9,12 @@ void clean(command * Command);
 /* Inisiasi Command menjadi kosong */
 
 command readCommand();
-/* Memparsing input menjadi Command dengan parameternya */
+/* Memparsing input menjadi Command dengan argumen-argumennya */
 
 int processCommandDocument(command Command);
-/* Memproses Command */
+/* Memproses Command untuk modus Document */
 
 int processCommandFile(command Command);
+/* Memproses Command untuk modus File */
 
 #endif
