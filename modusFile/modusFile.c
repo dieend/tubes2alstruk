@@ -27,11 +27,11 @@ void transferCell() {
 	char kol[50],isi[100];
 	int baris;
 	addressCell Cell;
-	DEBUG;
 	fscanf(processedFile,"%s",kol);
 	while (strcmp(kol,"#")) {
-		fscanf(processedFile,"%d %s",&baris,isi);
+		fscanf(processedFile,"%d : %s",&baris,isi);
 		Cell = getCell(baris,nomorKolom(kol));
+		printf("%s\n",isi);
 		if (isi[0] == '=') {
 			Tipe(Cell) = FORMULA;
 			strcpy(Formula(Cell),isi);
@@ -50,6 +50,7 @@ void transferCell() {
 		} else {
 			printf("Data tidak valid di %s%d\n",kol,baris);
 		}
+		fscanf(processedFile,"%*s");
 		fscanf(processedFile,"%s",kol);
 	}
 	fclose(processedFile);
@@ -64,8 +65,6 @@ void doModusFile(char path[50]){
 	} while (processCommandFile(readCommand()));
 }
 
-void Display(command Command){
-}
 
 void Write(command Command){
 }

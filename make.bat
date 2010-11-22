@@ -10,5 +10,6 @@ gcc -o "tes" main.c global/variable.c ^
  modusFile/modusFile.c ^
  modusFile/strukturData/worksheet.c ^
  modusFile/save/save.c ^
+ modusFile/display/display.c ^
  -Wall
 pause

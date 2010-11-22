@@ -6,11 +6,10 @@ void initDir(){
 }
 
 void transferDirectory() {
-	int x;
 	int i = 0;
 	FILE * akses;
 	char tmp[50];
-	x = system("dir \"./files/\" /a-d > tmp");
+	system("dir \"./files/\" /a-d > tmp");
 	akses = fopen("tmp","r");
 	fscanf(akses,"%*[^\n]\n");
 	fscanf(akses,"%*[^\n]\n");
@@ -38,9 +37,9 @@ void Find(command Command){
 
 void Open(command Command){
 	char path[50];
+	strcpy(path,"files/");
 	strcat(path,Command.param[1]);
 	strcat(path,ekstensi);
-	printf("%s\n",path);
 	doModusFile(path);
 }
 

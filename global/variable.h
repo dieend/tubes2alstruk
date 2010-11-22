@@ -7,6 +7,7 @@
 #include "boolean.h"
 #define DEBUG printf("OK")
 
+
 #define ekstensi ".xcl"
 
 #define MAXSIZE 50
