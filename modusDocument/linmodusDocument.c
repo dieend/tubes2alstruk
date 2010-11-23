@@ -29,17 +29,17 @@ void transferDirectory() {
 }
 
 void Find(command Command){
-	if (strcmp(Command.param[1],"name")) searchName(Command.param[2]); else
-	if (strcmp(Command.param[1],"date")) searchDate(Command.param[2]); else
-	if (strcmp(Command.param[1],"size")) searchSize(Command.param[2]);
+	if (!sstrcmp(Command.param[1],"name")) searchName(Command.param[2]); else
+	if (!sstrcmp(Command.param[1],"date")) searchDate(Command.param[2]); else
+	if (!sstrcmp(Command.param[1],"size")) searchSize(Command.param[2]);
 }
 
 
 void Open(command Command){
 	char path[50];
-	strcpy(path,"files/");
-	strcat(path,Command.param[1]);
-	strcat(path,ekstensi);
+	sstrcpy(path,"files/");
+	sstrcat(path,Command.param[1]);
+	sstrcat(path,ekstensi);
 	doModusFile(path);	
 }
 

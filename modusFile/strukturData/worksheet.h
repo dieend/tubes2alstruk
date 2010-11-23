@@ -47,6 +47,10 @@ typedef struct {
 	addressHeader hKolom;
 } worksheet;
 
+typedef struct {
+	int rUL,cUL, rLR, cLR;
+} area;
+
 addressHeader alokasiHeader(int x);
 addressCell alokasiCell() ;
 void alokasiWorksheet();
@@ -55,6 +59,8 @@ void showAll(int r, int c);
 void inverse(char inver_a[],int j);
 char * indeksKolom(int n);
 int nomorKolom(char kolom[]);
+boolean isArea(char Cek[]);
+area makeArea(char Area[]);
 extern worksheet Worksheet;
 
 #endif

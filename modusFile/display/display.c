@@ -14,7 +14,7 @@ void Display(command Command) {
 		for (j=1; j<=MAXWORKSIZE;j++) {
 			Cell = getCell(i,j);
 			if (Tipe(Cell) == KALIMAT) {
-				printf("%-10s", Kalimat(Cell));
+				printf("%-10s", Kalimat(Cell)+1);
 			} else
 			if (Tipe(Cell) == INTEGER) {
 				printf("%-10d", Integer(Cell));
@@ -24,12 +24,12 @@ void Display(command Command) {
 			} else
 			if (Tipe(Cell) == FORMULA) {
 				printf("%-10s", Formula(Cell));
-			} else
+			} else          
 			if (Tipe(Cell) == BOOLEAN) {
 				printf("%-10s", Boolean(Cell)?"TRUE":"FALSE");
 			} else 
 			if (Tipe(Cell) == EMPTY) {
-				printf("%-10s","##");
+				printf("%-10s","##");          
 			}
 			
 		}
