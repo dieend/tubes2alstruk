@@ -15,8 +15,8 @@ void transferDirectory() {
 	fscanf(akses,"%*[^\n]\n");
 	fscanf(akses,"%*[^\n]\n");
 	fscanf(akses,"%s", tmp);
-	while (strlen(tmp) == 10) {
-		strcpy(Dir.date[i],tmp);
+	while (sstrlen(tmp) == 10) {
+		sstrcpy(Dir.date[i],tmp);
 		fscanf(akses,"%s",Dir.hour[i]);
 		fscanf(akses,"%s",Dir.size[i]);
 		fscanf(akses,"%s",Dir.name[i++]);
@@ -29,17 +29,17 @@ void transferDirectory() {
 }
 
 void Find(command Command){
-	if (strcmp(Command.param[1],"name")) searchName(Command.param[2]); else
-	if (strcmp(Command.param[1],"date")) searchDate(Command.param[2]); else
-	if (strcmp(Command.param[1],"size")) searchSize(Command.param[2]);
+	if (sstrcmp(Command.param[1],"name")) searchName(Command.param[2]); else
+	if (sstrcmp(Command.param[1],"date")) searchDate(Command.param[2]); else
+	if (sstrcmp(Command.param[1],"size")) searchSize(Command.param[2]);
 }
 
 
 void Open(command Command){
 	char path[50];
-	strcpy(path,"files/");
-	strcat(path,Command.param[1]);
-	strcat(path,ekstensi);
+	sstrcpy(path,"files/");
+	sstrcat(path,Command.param[1]);
+	sstrcat(path,ekstensi);
 	doModusFile(path);
 }
 

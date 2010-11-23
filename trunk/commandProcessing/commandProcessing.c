@@ -3,7 +3,7 @@
 void clean(command * Command){
 	int i;
 	for (i=0; i<5; i++) {
-		strcpy( (*Command).param[i] , "");
+		sstrcpy( (*Command).param[i] , "");
 	}
 }
 
@@ -14,13 +14,13 @@ command readCommand() {
 	clean(&Command);
 	scanf("%s", tmp);
 	if (tmp[0] == '=') {
-		while (strcmp(tmp,"#")) {
-			strcat(Command.param[i], tmp);
+		while (sstrcmp(tmp,"#")) {
+			sstrcat(Command.param[i], tmp);
 			scanf("%s",tmp);
 		}
 	} else {
-		while (strcmp(tmp,"#")) {
-			strcpy(Command.param[i++], tmp);
+		while (sstrcmp(tmp,"#")) {
+			sstrcpy(Command.param[i++], tmp);
 			scanf("%s",tmp);
 		}
 	}
@@ -28,12 +28,12 @@ command readCommand() {
 }
 
 int processCommandDocument(command Command){
-	if (!strcmp(Command.param[0],"list")) List();
-	else if (!strcmp(Command.param[0],"find")) Find(Command);
-	else if (!strcmp(Command.param[0],"delete")) Delete(Command);
-	else if (!strcmp(Command.param[0],"new")) New(Command);
-	else if (!strcmp(Command.param[0],"open")) Open(Command);
-	else if (!strcmp(Command.param[0],"exit")) {
+	if (!sstrcmp(Command.param[0],"list")) List();
+	else if (!sstrcmp(Command.param[0],"find")) Find(Command);
+	else if (!sstrcmp(Command.param[0],"delete")) Delete(Command);
+	else if (!sstrcmp(Command.param[0],"new")) New(Command);
+	else if (!sstrcmp(Command.param[0],"open")) Open(Command);
+	else if (!sstrcmp(Command.param[0],"exit")) {
 		Exit();
 		return 0;
 	}
@@ -42,12 +42,12 @@ int processCommandDocument(command Command){
 }
 
 int processCommandFile(command Command) {
-	if (!strcmp(Command.param[0],"save")) Save(); else
-	if (!strcmp(Command.param[0],"display")) Display(Command); else
-	if (!strcmp(Command.param[0],"close")) return 0; else
-	if (!strcmp(Command.param[0],"write")) Write(Command); else
-	if (!strcmp(Command.param[0],"remove")) Remove(Command); else
+	if (!sstrcmp(Command.param[0],"save")) Save(); else
+	if (!sstrcmp(Command.param[0],"display")) Display(Command); else
+	if (!sstrcmp(Command.param[0],"close")) return 0; else
+	if (!sstrcmp(Command.param[0],"write")) Write(Command); else
+	if (!sstrcmp(Command.param[0],"remove")) Remove(Command); else
 	if (Command.param[0][1] == '=') Evaluate(Command); else
-	printf("Invalid Command!\n");	
-	return 0;
+	printf("Invalid Command!\n");
+	return 1;
 }

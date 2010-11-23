@@ -111,18 +111,18 @@ char * indeksKolom(int n) {
 	indeks = (char*) malloc(20*sizeof(char));
 	int chr,len = 0;
 	char tmp[2];
-	strcpy(indeks,"");
-	strcpy(tmp,"A");
+	sstrcpy(indeks,"");
+	sstrcpy(tmp,"A");
 	chr = n%26;
 	tmp[0]=(char)(chr+('A'));
-	strcat(indeks,tmp);
+	sstrcat(indeks,tmp);
 	len++;
 	n/=26;
 	while (n>0) {
 		n--;
 		chr = n%26;
 		tmp[0]=(char)(chr+('A'));
-		strcat(indeks,tmp);
+		sstrcat(indeks,tmp);
 		len++;
 		n/=26;
 	}
@@ -134,7 +134,7 @@ int nomorKolom(char kolom[]) {
 	int n,len,mult;
 	mult = 1;
 	n=0;
-	len = strlen(kolom)-1;
+	len = sstrlen(kolom)-1;
 //	printf("%s\n",kolom);
 	while (len>=0) {
 		n += (int) (kolom[len]-'A'+1) * mult;
@@ -144,4 +144,47 @@ int nomorKolom(char kolom[]) {
 		len--;
 	}
 	return n;
+}
+
+boolean isArea(char Cek[]) {
+	int i,len;
+	len = sstrlen(Cek);
+	for (i=0; i<len; i++) {
+		if (Cek[i] == ':') return true;
+	}
+	return false;
+}
+
+area makeArea(char cArea[]) {
+	area Area;
+	int i,j;
+	char cindeks[50];
+	i=0; j=0;
+	while ('A' <= cArea[i] && cArea[i] <= 'Z') {
+		cindeks[j] = cArea[i];
+		i++; j++;
+	}
+	cindeks[j] = '\0';
+	Area.cUL = nomorKolom(cindeks);
+	j=0;
+	while ('0' <= cArea[i] && cArea[i] <= '9') {
+		cindeks[j] = cArea[i];
+		i++; j++;
+	}
+	sscanf(cindeks, "%d",&Area.rUL);
+	i++;
+	j=0;
+	while ('A' <= cArea[i] && cArea[i] <= 'Z') {
+		cindeks[j] = cArea[i];
+		i++; j++;
+	}
+	cindeks[j] = '\0';
+	Area.cLR = nomorKolom(cindeks);
+	j=0;
+	while ('0' <= cArea[i] && cArea[i] <= '9') {
+		cindeks[j] = cArea[i];
+		i++; j++;
+	}
+	sscanf(cindeks, "%d",&Area.rLR);
+	return Area;
 }

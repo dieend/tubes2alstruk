@@ -9,7 +9,7 @@ void clean(command * Command);
 /* Inisiasi Command menjadi kosong */
 
 command readCommand();
-/* Memparsing input menjadi Command dengan argumen-argumennya */
+/* Memparsing input menjavoid makeEmpty(area Area);di Command dengan argumen-argumennya */
 
 int processCommandDocument(command Command);
 /* Memproses Command untuk modus Document */
